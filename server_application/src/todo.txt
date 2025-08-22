@@ -1,0 +1,24 @@
+so there is basically one endpoint and one set of functionalities.
+
+What do I actually want this to be?
+Is it just a database tool with security and then I build the smaller application around it?
+or should there be other features, maybe like adding objects to the program and recompiling?
+
+
+Could define types in a text file type thing maybe? 
+
+    Create one master repository of objects that have a string called a type 
+
+        class LooselyTypedData {
+            int id;
+            String name;
+            String type;
+            String data;
+        }
+
+    Then, when determining how to deal with the objects, and any information about what the objects hold or whatever they can just refer to the type files. Could have a rest controller related to types
+
+
+
+address:8080/db/{Object Name}
+CRUDL
