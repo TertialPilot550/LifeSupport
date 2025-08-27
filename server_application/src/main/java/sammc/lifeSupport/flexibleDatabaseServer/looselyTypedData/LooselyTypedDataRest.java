@@ -22,8 +22,9 @@ public class LooselyTypedDataRest {
     LooselyTypedDataRepository repo;
 
     @PostMapping("/data")
-    public void create(@RequestBody LooselyTypedData data) {
+    public int create(@RequestBody LooselyTypedData data) {
         repo.save(data);
+        return data.getId();
     }
 
     @GetMapping("/data/{id}")
@@ -38,6 +39,7 @@ public class LooselyTypedDataRest {
         if (newData.getName() != null) toUpdate.setName(newData.getName());
         if (newData.getType() != null) toUpdate.setType(newData.getType());
         if (newData.getData() != null) toUpdate.setData(newData.getData());
+        repo.save(toUpdate);
         return true;
     }
 

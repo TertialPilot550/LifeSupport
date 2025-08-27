@@ -1,35 +1,22 @@
-package sammc.lifeSupport.flexibleDatabaseServer.looselyTypedData;
+package sammc.client.data;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
 /**
  * Flexible data type for the flexible database
  * @author sammc
  */
-
-@Entity
 public class LooselyTypedData {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String datetime;
     private String type;
     private String data;
-    private String datetime;
     
-    public String getDatetime() {
-        return datetime;
-    }
-    public void setDatetime(String datetime) {
-        this.datetime = datetime;
-    }
+    // getters and setters
+
     public int getId() {
         return id;
     }
@@ -53,6 +40,12 @@ public class LooselyTypedData {
     }
     public void setData(String data) {
         this.data = data;
+    }
+    public String getDatetime() {
+        return datetime;
+    }
+    public void setDatetime(String datetime) {
+        this.datetime = datetime;
     }
 
     @Override
